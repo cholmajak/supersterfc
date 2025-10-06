@@ -1,0 +1,106 @@
+:root{
+	--bg:#f7fbff;
+	--accent:#1f6feb;
+	--muted:#6b7280;
+	--container-width:1100px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+	font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	background:var(--bg);
+	color:#0b1220;
+	line-height:1.5;
+}
+
+.container{
+	max-width:var(--container-width);
+	margin:0 auto;
+	padding:24px;
+}
+
+/* Header */
+.site-header{
+	background:linear-gradient(90deg, #0d3b91 0%, #1f6feb 100%);
+	color:white;
+}
+.site-header .container{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.club-name{font-size:1.4rem;letter-spacing:0.6px}
+.main-nav a{
+	color:rgba(255,255,255,0.95);
+	margin-left:18px;
+	text-decoration:none;
+	font-weight:600;
+}
+.main-nav a:hover{opacity:0.9}
+
+/* Hero */
+.hero{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	gap:24px;
+	padding:36px 24px;
+}
+.hero-copy{flex:1 1 420px}
+.hero-image{
+	flex:0 0 320px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	gap:12px;
+}
+.hero h2{font-size:1.8rem;margin-bottom:8px;color:#06264b}
+.hero p{color:var(--muted);margin-bottom:12px}
+.highlights{list-style:none;display:flex;gap:12px;margin:12px 0 18px;padding:0}
+.highlights li{background:#fff;border-radius:999px;padding:8px 12px;box-shadow:0 1px 3px rgba(15,23,42,0.06);font-weight:600;font-size:0.9rem}
+.btn{
+	display:inline-block;
+	background:var(--accent);
+	color:white;
+	padding:10px 16px;
+	border-radius:8px;
+	text-decoration:none;
+	font-weight:700;
+	box-shadow:0 6px 20px rgba(31,107,235,0.18);
+}
+
+/* photo styling (kept) */
+.hero-photo{
+	width:100%;
+	max-width:320px;
+	height:auto;
+	display:block;
+	border-radius:10px;
+	box-shadow:0 8px 24px rgba(11,18,32,0.12);
+	object-fit:cover;
+}
+
+/* Sections */
+section{margin-top:28px;padding-bottom:18px}
+h3{color:#0b2444;margin-bottom:8px}
+.players{list-style:none;padding-left:0;color:var(--muted)}
+.players li{padding:6px 0}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(11,18,32,0.06);padding:18px 0;margin-top:28px}
+.site-footer p{color:var(--muted);font-size:0.9rem}
+
+/* SVG sizing */
+.hero-image svg{width:100%;max-width:320px;height:auto;display:block}
+
+/* Responsive */
+@media (max-width:900px){
+	.hero{flex-direction:column-reverse;padding:16px}
+	.hero-image{max-width:260px}
+	.site-header .container{flex-direction:column;gap:12px;align-items:flex-start}
+	.main-nav{display:flex;gap:12px}
+}
+	.hero-photo:invalid + .fallback-svg,
+	.hero-photo[hidden] + .fallback-svg{display:block}
+}
