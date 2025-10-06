@@ -49,8 +49,10 @@ body{
 }
 .hero-copy{flex:1 1 420px}
 .hero-image{
+	/* slightly adjusted to allow vertical stacking of image + details */
 	flex:0 0 320px;
 	display:flex;
+	flex-direction:column;
 	align-items:center;
 	justify-content:center;
 	gap:12px;
@@ -70,7 +72,7 @@ body{
 	box-shadow:0 6px 20px rgba(31,107,235,0.18);
 }
 
-/* photo styling (kept) */
+/* photo styling (kept/ensured) */
 .hero-photo{
 	width:100%;
 	max-width:320px;
@@ -80,6 +82,17 @@ body{
 	box-shadow:0 8px 24px rgba(11,18,32,0.12);
 	object-fit:cover;
 }
+
+/* profile details under the image */
+.profile-details{
+	text-align:center;
+	color:var(--muted);
+	margin-top:6px;
+	font-size:0.95rem;
+	line-height:1.4;
+}
+.profile-details p{margin:4px 0}
+.profile-details strong{color:#0b2444}
 
 /* Sections */
 section{margin-top:28px;padding-bottom:18px}
@@ -104,3 +117,4 @@ h3{color:#0b2444;margin-bottom:8px}
 	.hero-photo:invalid + .fallback-svg,
 	.hero-photo[hidden] + .fallback-svg{display:block}
 }
+
